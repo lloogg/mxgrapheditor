@@ -3,7 +3,6 @@ var editorUi;
 var editorUiInit = EditorUi.prototype.init;
 import defaultXml from "./styles/default.xml";
 import bundles from "./resources/grapheditor.txt";
-
 EditorUi.prototype.init = function () {
   editorUiInit.apply(this, arguments);
   this.actions.get("export").setEnabled(false);
@@ -37,3 +36,4 @@ themes[Graph.prototype.defaultThemeName] =
   mxUtils.parseXml(defaultXml).documentElement;
 // Main
 editorUi = new EditorUi(new Editor(urlParams["chrome"] == "0", themes));
+window.editor = editorUi.editor;
